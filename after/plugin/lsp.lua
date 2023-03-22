@@ -3,11 +3,10 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
   'tsserver',
-  'sumneko_lua',
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure( {
     settings = {
         Lua = {
             diagnostics = {

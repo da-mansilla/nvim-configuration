@@ -6,9 +6,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 --let g:user_emmet_leader_key='<C-Z>'
 
 -- Git Status 
-vim.keymap.set("n", "<leader>gs", ":Gvdiffsplit<CR>")
+vim.keymap.set("n", "<leader>ga", ":Gvdiffsplit<CR>")
 -- Git Diff Split Vertical
-vim.keymap.set("n", "<leader>gd", ":Gvdiffsplit<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 

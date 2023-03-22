@@ -12,11 +12,12 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 	use({
-		'rose-pine/neovim',
-		as = 'rose-pine',
+		'ellisonleao/gruvbox.nvim',
+		as = 'gruvbox',
 		config = function()
-			require("rose-pine").setup()
-			vim.cmd('colorscheme rose-pine')
+			require("gruvbox").setup()
+			vim.cmd('colorscheme gruvbox')
+            vim.o.background = "dark"
 		end
 	})
 	use ( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -50,5 +51,8 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
     use { 'mattn/emmet-vim'} -- Emmet for Nvim
+    use { 'numtoStr/Comment.nvim'} -- Easily comment lines code 
+    use { 'JoosepAlviste/nvim-ts-context-commentstring'} -- Comment JSX lines
+    use { "lvimuser/lsp-inlayhints.nvim" } 
 end)
 

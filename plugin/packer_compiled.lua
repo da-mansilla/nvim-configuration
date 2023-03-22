@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/home/amansilla/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numtoStr/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/amansilla/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -114,6 +119,17 @@ _G.packer_plugins = {
     path = "/home/amansilla/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  gruvbox = {
+    config = { "\27LJ\2\nƒ\1\0\0\3\0\t\0\0146\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0'\2\5\0B\0\2\0016\0\3\0009\0\6\0'\1\b\0=\1\a\0K\0\1\0\tdark\15background\6o\24colorscheme gruvbox\bcmd\bvim\nsetup\fgruvbox\frequire\0" },
+    loaded = true,
+    path = "/home/amansilla/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
+  ["lsp-inlayhints.nvim"] = {
+    loaded = true,
+    path = "/home/amansilla/.local/share/nvim/site/pack/packer/start/lsp-inlayhints.nvim",
+    url = "https://github.com/lvimuser/lsp-inlayhints.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/amansilla/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -150,6 +166,11 @@ _G.packer_plugins = {
     path = "/home/amansilla/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/home/amansilla/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/amansilla/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -164,12 +185,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/amansilla/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["rose-pine"] = {
-    config = { "\27LJ\2\ne\0\0\3\0\6\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\nsetup\14rose-pine\frequire\0" },
-    loaded = true,
-    path = "/home/amansilla/.local/share/nvim/site/pack/packer/start/rose-pine",
-    url = "https://github.com/rose-pine/neovim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -189,10 +204,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-try_loadstring("\27LJ\2\ne\0\0\3\0\6\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\nsetup\14rose-pine\frequire\0", "config", "rose-pine")
-time([[Config for rose-pine]], false)
+-- Config for: gruvbox
+time([[Config for gruvbox]], true)
+try_loadstring("\27LJ\2\nƒ\1\0\0\3\0\t\0\0146\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0'\2\5\0B\0\2\0016\0\3\0009\0\6\0'\1\b\0=\1\a\0K\0\1\0\tdark\15background\6o\24colorscheme gruvbox\bcmd\bvim\nsetup\fgruvbox\frequire\0", "config", "gruvbox")
+time([[Config for gruvbox]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
