@@ -53,6 +53,9 @@ return require('packer').startup(function(use)
     use { 'mattn/emmet-vim'} -- Emmet for Nvim
     use { 'numtoStr/Comment.nvim'} -- Easily comment lines code 
     use { 'JoosepAlviste/nvim-ts-context-commentstring'} -- Comment JSX lines
-    use { "lvimuser/lsp-inlayhints.nvim" } 
+    use { "lvimuser/lsp-inlayhints.nvim" }
+    use { "christoomey/vim-tmux-navigator" }
+    use { "feline-nvim/feline.nvim" }
+
 end)
 
