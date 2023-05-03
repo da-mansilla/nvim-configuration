@@ -56,6 +56,10 @@ return require('packer').startup(function(use)
     use { "lvimuser/lsp-inlayhints.nvim" }
     use { "christoomey/vim-tmux-navigator" }
     use { "feline-nvim/feline.nvim" }
+     -- Transparency
+    use { "xiyaowong/transparent.nvim"}
+     -- Toggle Terminal
+    use { "akinsho/toggleterm.nvim"}
 
 end)
 
