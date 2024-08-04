@@ -6,6 +6,41 @@ alias nv="nvim"
 alias tm="tmux"
 alias tmr="tmuxinator"
 alias cl="clear"
+alias k="kubectl"
+alias emacs="emacsclient -c -a 'emacs'"
+alias flx="flex analex.l && gcc lex.yy.c -lfl -o analex && ./analex"
+alias DASH_PROD_TOKEN="cat /home/amansilla/.dash_tokens | grep 'PROD=' | sed 's/PROD=//'"
+alias DASH_DEV_TOKEN="cat /home/amansilla/.dash_tokens | grep 'DEV=' | sed 's/DEV=//'"
+alias DASH_MGMT_TOKEN="cat /home/amansilla/.dash_tokens | grep 'MGMT=' | sed 's/MGMT=//'"
+#alias zenmap="sudo zenmap"
+
+
+CLICOLOR=1
+LS_COLORS='no=00;37:fi=00:di=00;33:ln=04;36:pi=40;33:so=01;35:bd=40;33;01:'
+export LS_COLORS
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Path 
+export PATH=$PATH:/usr/local/go/bin:usr/local/lib:/home/amansilla/.local/bin:/home/amansilla/bin:/home/amansilla/.config/emacs/bin:/home/amansilla/www/wired10/wiredtiger-10.0.0
+
+export OPENAI_API_KEY=
+export GITLAB_TOKEN=
+export ARGO_PASSWORD=
+export ARGO_PASSWORD_OLD=
+export MONGO_DB=
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$HOME/.pyenv/bin:$PATH"
+export GRAFANA_PASSWORD=
+export GOOGLE_APPLICATION_CREDENTIALS=/home/amansilla/credentials_gcp.json
+export JIRA_TOKEN=""
+#export KUBECONFIG="/home/amansilla/.kube/config"
+export KUBECONFIG="/home/amansilla/.kube/us1-highier-prod-heritas-kubeconfig:/home/amansilla/.kube/us1-lower-dev-heritas-kubeconfig:/home/amansilla/.kube/us1-mgmt-produccion-heritas-kubeconfig:/home/amansilla/.kube/cluster-viejo-kubeconfig"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Github
+export GITHUB_TOKEN=""
 
 # Editor
 export EDITOR='nvim'
@@ -78,28 +113,35 @@ bindkey '^R' history-incremental-search-backward
 # Load zsh-syntax-highlighting; should be last.
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 # Git Integration
-source ~/.zsh/zsh-git-prompt/zshrc.sh
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@% %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b $(git_super_status)"
+#source ~/.zsh/zsh-git-prompt/zshrc.sh
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@% %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}"
 
 # Autosuggestion
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Highlighting
-source /home/amansilla/Descargas/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /home/amansilla/Descargas/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+xset r rate 300 30
 
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/amansilla/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/amansilla/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/amansilla/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/amansilla/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# # pnpm
+# export PNPM_HOME="/home/amansilla/.local/share/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME:"*) ;;
+#   *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
+# # pnpm end
+source <(switcher init zsh)
+# Kubernetes
+source <(kubectl completion zsh)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/amansilla/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/amansilla/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/amansilla/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/amansilla/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# multiline variable
 
