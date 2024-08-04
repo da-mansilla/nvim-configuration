@@ -18,16 +18,16 @@ local default_plugins = {
     lazy = false,
   },
 
-  -- {
-  --   "NvChad/nvterm",
-  --   init = function()
-  --     require("core.utils").load_mappings "nvterm"
-  --   end,
-  --   config = function(_, opts)
-  --     require "base46.term"
-  --     require("nvterm").setup(opts)
-  --   end,
-  -- },
+  {
+    "NvChad/nvterm",
+    init = function()
+      require("core.utils").load_mappings "nvterm"
+    end,
+    config = function(_, opts)
+      require "base46.term"
+      require("nvterm").setup(opts)
+    end,
+  },
 
   {
     "NvChad/nvim-colorizer.lua",
@@ -78,10 +78,6 @@ local default_plugins = {
     end,
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
-    dependencies =
-    {
-          'JoosepAlviste/nvim-ts-context-commentstring',
-    },
     opts = function()
       return require "plugins.configs.treesitter"
     end,
@@ -207,9 +203,6 @@ local default_plugins = {
       { "gb", mode = { "n", "o" }, desc = "Comment toggle blockwise" },
       { "gb", mode = "x", desc = "Comment toggle blockwise (visual)" },
     },
-    opts = {
-            pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-    },
     init = function()
       require("core.utils").load_mappings "comment"
     end,
@@ -257,17 +250,17 @@ local default_plugins = {
   },
 
   -- Only load whichkey after all the gui
-  {
-    "folke/which-key.nvim",
-    keys = { "<leader>", '"', "'", "`", "c", "v", "g" },
-    init = function()
-      require("core.utils").load_mappings "whichkey"
-    end,
-    config = function(_, opts)
-      dofile(vim.g.base46_cache .. "whichkey")
-      require("which-key").setup(opts)
-    end,
-  },
+  -- {
+  --   "folke/which-key.nvim",
+  --   keys = { "<leader>", '"', "'", "`", "c", "v", "g" },
+  --   init = function()
+  --     require("core.utils").load_mappings "whichkey"
+  --   end,
+  --   config = function(_, opts)
+  --     dofile(vim.g.base46_cache .. "whichkey")
+  --     require("which-key").setup(opts)
+  --   end,
+  -- },
 }
 
 local config = require("core.utils").load_config()

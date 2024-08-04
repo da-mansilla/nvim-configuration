@@ -92,8 +92,8 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
@@ -141,9 +141,27 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+-- vim.opt.clipboard=exclude:*
+-- set clipboard=exclude:*
+-- set clipboard+=unnamed
+-- set clipboard+=unnamedplus
+
+
 
 --vim.opt.colorcolumn = "100"
 
 vim.g.python3_host_prog = '/usr/bin/python3'
 vim.g.python2_host_prog = '/usr/bin/python2.7'
 vim.g.loaded_python3_provider=1
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+
+vim.g.copilot_assume_mapped = true
+vim.keymap.set("i", "<C-a>", 'copilot#Accept("<CR>")', {expr = true, replace_keycodes = false})
+vim.g.copilot_no_tab_map = true
+
+vim.g.copilot_no_tab_map = true
+
+-- vim.keymap.set("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+-- hi Container guifg=#BADA55 guibg=Black
+-- set statusline+=%#Container#%{g:currentContainer}
+-- vim.g.OmniSharp_server_path = '/home/me/omnisharp/omnisharp.http-linux-x64/run'

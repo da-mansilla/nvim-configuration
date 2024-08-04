@@ -11,7 +11,17 @@ local plugins = {
         "black",
         "typescript-language-server",
         "clangd",
-        "clang-format"
+        "clang-format",
+        "gopls",
+        "css-lsp",
+        "tailwindcss-language-server",
+        "dockerfile-language-server",
+        "prettier",
+        "solang",
+        "omnisharp",
+        "stylelint",
+        "terraformls",
+        "awk-language-server"
       }
     }
   },
@@ -29,7 +39,7 @@ local plugins = {
   {
     "jose-elias-alvarez/null-ls.nvim",
     event = "VeryLazy",
-    ft = {"python"},
+    ft = {"python","go"},
     opts = function ()
       return require "custom.configs.null-ls"
     end
@@ -70,7 +80,52 @@ local plugins = {
   {
       "RRethy/vim-illuminate",
       event="VeryLazy"
-  }
+  },
+  {
+      "xiyaowong/transparent.nvim",
+      event="VeryLazy"
+  },
+  {
+      "jamestthompson3/nvim-remote-containers",
+      event="VeryLazy"
+  },
+  {
+      "github/copilot.vim",
+      event="VeryLazy"
+  },
+  -- {
+  --     'OmniSharp/omnisharp-vim',
+  --       -- cmd = { "/home/amansilla/.cache/omnisharp-vim/omnisharp-roslyn/run" },
+  --     event="VeryLazy",
+  --
+  -- },
+  -- {
+  --       "hrsh7th/nvim-cmp",
+  --     event="VeryLazy",
+  --       opts = {
+  --           sources = {
+  --               -- other sources
+  --               {
+  --                   name = "html-css",
+  --                   option = {
+  --                       -- require "custom.configs.html-css"
+  --                       -- your configuration here
+  --                   },
+  --               },
+  --           },
+  --       },
+  --   },
+  --   { "Jezda1337/nvim-html-css",
+  --       event="VeryLazy",
+  --       dependencies = {
+  --           "nvim-treesitter/nvim-treesitter",
+  --           "nvim-lua/plenary.nvim"
+  --       },
+  --       config = function()
+  --           require("html-css").setup()
+  --       end
+  --   }
+
 }
 
 return plugins

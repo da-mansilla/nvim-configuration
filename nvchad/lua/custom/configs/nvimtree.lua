@@ -5,7 +5,7 @@ local HEIGHT_RATIO = 0.8
 local WIDTH_RATIO = 0.5
 
 config.view = {
-    side = "center",
+    -- side = "center",
     float = {
       enable = true,
       open_win_config = function()
